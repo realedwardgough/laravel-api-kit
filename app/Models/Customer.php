@@ -8,10 +8,19 @@ use App\Models\Invoice;
 
 class Customer extends Model
 {
-    /** @use HasFactory<\Database\Factories\CustomerFactory> */
-    use HasFactory;
+   use HasFactory;
 
-    public function invoices() {
-        return $this->hasMany(Invoice::class);
-    }
+   protected $fillable = [
+      'name',
+      'type',
+      'email',
+      'address',
+      'city',
+      'province',
+      'postcode'
+   ];
+
+   public function invoices() {
+      return $this->hasMany(Invoice::class);
+   }
 }
