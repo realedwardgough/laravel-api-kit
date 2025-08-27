@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Models\Customer;
 use App\Http\Requests\v1\StoreCustomerRequest;
+use App\Http\Requests\v1\UpdateCustomerRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\v1\CustomerResource;
 use App\Http\Resources\v1\CustomerCollection;
@@ -67,12 +68,10 @@ class CustomerController extends Controller
    /**
     * Update the specified resource in storage.
     */
-   /*
    public function update(UpdateCustomerRequest $request, Customer $customer)
    {
-      //
+      $customer->update($request->all());
    }
-   */
 
    /**
     * Remove the specified resource from storage.
